@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Email Campaign - Marketing Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Marketing Dashboard</a>
+      <!-- Rest of the navigation bar code remains the same -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+      <h2>Create Email Campaign</h2>
+
+      <form>
+        <div class="form-group">
+          <label for="campaignName">Campaign Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="campaignName"
+            placeholder="Enter campaign name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="emailSubject">Email Subject</label>
+          <input type text" class="form-control" id="emailSubject"
+          placeholder="Enter email subject">
+        </div>
+        <div class="form-group">
+          <label for="emailContent">Email Content</label>
+          <textarea
+            class="form-control"
+            id="emailContent"
+            rows="4"
+            placeholder="Enter email content"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="emailAddresses">Select Contact Emails</label>
+          <select multiple class="form-control" id="emailAddresses">
+            <option>contact1@example.com</option>
+            <option>contact2@example.com</option>
+            <option>contact3@example.com</option>
+            <!-- Add more contact options here -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="campaignStatus">Campaign Active Status</label>
+          <select class="form-control" id="campaignStatus">
+            <option value="active">Active</option>
+            <option value="paused">Paused</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Campaign</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

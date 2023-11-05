@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Report</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Your Company Name</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            User Name
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-4">
+      <h1>Analytics Report</h1>
+
+      <!-- Table 1: Lead Conversion Rate Report -->
+      <h2>Lead Conversion Rate Report</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Total Leads</th>
+            <th>Total Conversions</th>
+            <th>Conversion Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>1000</td>
+            <td>150</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>950</td>
+            <td>145</td>
+            <td>15.26%</td>
+          </tr>
+          <tr>
+            <td>March</td>
+            <td>1100</td>
+            <td>165</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>April</td>
+            <td>1050</td>
+            <td>140</td>
+            <td>13.33%</td>
+          </tr>
+          <tr>
+            <td>May</td>
+            <td>1200</td>
+            <td>155</td>
+            <td>12.92%</td>
+          </tr>
+          <tr>
+            <td>June</td>
+            <td>1150</td>
+            <td>160</td>
+            <td>13.91%</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>1300</td>
+            <td>175</td>
+            <td>13.46%</td>
+          </tr>
+          <tr>
+            <td>August</td>
+            <td>1350</td>
+            <td>185</td>
+            <td>13.70%</td>
+          </tr>
+          <tr>
+            <td>September</td>
+            <td>1400</td>
+            <td>195</td>
+            <td>13.93%</td>
+          </tr>
+          <tr>
+            <td>October</td>
+            <td>1450</td>
+            <td>210</td>
+            <td>14.48%</td>
+          </tr>
+          <tr>
+            <td>November</td>
+            <td>1500</td>
+            <td>220</td>
+            <td>14.67%</td>
+          </tr>
+          <tr>
+            <td>December</td>
+            <td>1550</td>
+            <td>235</td>
+            <td>15.16%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Table 2: Email Campaign Performance Report -->
+      <h2>Email Campaign Performance Report</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Campaign Name</th>
+            <th>Emails Sent</th>
+            <th>Open Rate</th>
+            <th>Click Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Campaign 1</td>
+            <td>10000</td>
+            <td>20%</td>
+            <td>5%</td>
+          </tr>
+          <tr>
+            <td>Campaign 2</td>
+            <td>9500</td>
+            <td>18%</td>
+            <td>4%</td>
+          </tr>
+          <tr>
+            <td>Campaign 3</td>
+            <td>10500</td>
+            <td>22%</td>
+            <td>5.5%</td>
+          </tr>
+          <tr>
+            <td>Campaign 4</td>
+            <td>11000</td>
+            <td>21%</td>
+            <td>5.2%</td>
+          </tr>
+          <tr>
+            <td>Campaign 5</td>
+            <td>11500</td>
+            <td>23%</td>
+            <td>5.8%</td>
+          </tr>
+          <tr>
+            <td>Campaign 6</td>
+            <td>12000</td>
+            <td>25%</td>
+            <td>6%</td>
+          </tr>
+          <tr>
+            <td>Campaign 7</td>
+            <td>12500</td>
+            <td>24%</td>
+            <td>6.2%</td>
+          </tr>
+          <tr>
+            <td>Campaign 8</td>
+            <td>13000</td>
+            <td>26%</td>
+            <td>6.5%</td>
+          </tr>
+          <tr>
+            <td>Campaign 9</td>
+            <td>13500</td>
+            <td>27%</td>
+            <td>6.7%</td>
+          </tr>
+          <tr>
+            <td>Campaign 10</td>
+            <td>14000</td>
+            <td>28%</td>
+            <td>7%</td>
+          </tr>
+          <tr>
+            <td>Campaign 11</td>
+            <td>14500</td>
+            <td>29%</td>
+            <td>7.2%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bar Chart: Lead Conversion Rate -->
+      <h2>Lead Conversion Rate (Bar Chart)</h2>
+      <div class="chart-container">
+        <canvas id="leadConversionChart" width="400" height="200"></canvas>
+      </div>
+
+      <!-- Pie Chart: Email Campaign Performance -->
+      <h2>Email Campaign Performance (Pie Chart)</h2>
+      <div class="chart-container">
+        <canvas id="emailCampaignChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <!-- Bottom Bar (Fixed) -->
+    <footer class="navbar navbar-light bg-light fixed-bottom">
+      <div class="container text-center">&copy; Your Company 2023</div>
+    </footer>
+
+    <!-- Bootstrap and Chart.js Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/Chart.min.js"></script>
+
+    <!-- JavaScript for Chart 1: Lead Conversion Rate -->
+    <script>
+      var leadConversionData = {
+        labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ],
+        datasets: [
+          {
+            label: "Conversion Rate",
+            data: [
+              15, 15.26, 15, 13.33, 12.92, 13.91, 13.46, 13.7, 13.93, 14.48,
+              14.67, 15.16,
+            ],
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      var leadConversionChart = new Chart(
+        document.getElementById("leadConversionChart"),
+        {
+          type: "bar",
+          data: leadConversionData,
+        }
+      );
+    </script>
+
+    <!-- JavaScript for Chart 2: Email Campaign Performance -->
+    <script>
+      var emailCampaignData = {
+        labels: [
+          "Campaign 1",
+          "Campaign 2",
+          "Campaign 3",
+          "Campaign 4",
+          "Campaign 5",
+          "Campaign 6",
+          "Campaign 7",
+          "Campaign 8",
+          "Campaign 9",
+          "Campaign 10",
+          "Campaign 11",
+        ],
+        datasets: [
+          {
+            data: [20, 18, 22, 21, 23, 25, 24, 26, 27, 28, 29],
+            backgroundColor: [
+              "#FF5733",
+              "#339CFF",
+              "#33FF3D",
+              "#FF5733",
+              "#339CFF",
+              "#33FF3D",
+              "#FF5733",
+              "#339CFF",
+              "#33FF3D",
+              "#FF5733",
+              "#339CFF",
+            ],
+          },
+        ],
+      };
+
+      var emailCampaignChart = new Chart(
+        document.getElementById("emailCampaignChart"),
+        {
+          type: "pie",
+          data: emailCampaignData,
+        }
+      );
+    </script>
+  </body>
+</html>

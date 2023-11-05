@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Your Company Name</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              User Name
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-4">
+      <h1>Welcome, User Name</h1>
+
+      <!-- Filter Section -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <select id="statusFilter" class="form-control">
+            <option value="">All Status</option>
+            <option value="Ongoing">Ongoing</option>
+            <option value="Closed-Won">Closed-Won</option>
+            <option value="Closed-Lost">Closed-Lost</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <input
+            type="text"
+            id="customFilter"
+            class="form-control"
+            placeholder="Custom Filter"
+          />
+        </div>
+        <div class="col-md-4">
+          <button id="applyFilters" class="btn btn-primary btn-block">
+            Apply Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Lead Status List -->
+      <h2>Lead Status List</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Lead Name</th>
+            <th>Contact Information</th>
+            <th>Lead Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dummy Data Entries -->
+          <tr>
+            <td>John Doe</td>
+            <td>Email: john.doe@example.com<br />Phone: +1234567890</td>
+            <td>
+              <select class="form-control" id="leadStatus1"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Email: jane.smith@example.com<br />Phone: +9876543210</td>
+            <td>
+              <select class="form-control" id="leadStatus2"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <!-- Additional Data Entries -->
+          <tr>
+            <td>Sarah Williams</td>
+            <td>Email: sarah.williams@example.com<br />Phone: +9876543210</td>
+            <td>
+              <select class="form-control" id="leadStatus3"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>David Miller</td>
+            <td>Email: david.miller@example.com<br />Phone: +1357924680</td>
+            <td>
+              <select class="form-control" id="leadStatus4"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Emma Davis</td>
+            <td>Email: emma.davis@example.com<br />Phone: +1234567890</td>
+            <td>
+              <select class="form-control" id="leadStatus5"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>William Wilson</td>
+            <td>Email: william.wilson@example.com<br />Phone: +9876543210</td>
+            <td>
+              <select class="form-control" id="leadStatus6"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Olivia Lee</td>
+            <td>Email: olivia.lee@example.com<br />Phone: +1357924680</td>
+            <td>
+              <select class="form-control" id="leadStatus7"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+          <tr>
+            <td>James Brown</td>
+            <td>Email: james.brown@example.com<br />Phone: +1234567890</td>
+            <td>
+              <select class="form-control" id="leadStatus8"></select>
+            </td>
+            <td>
+              <button class="btn btn-primary">Contact</button>
+              <a href="history.html" class="btn btn-info">History</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Randomize Lead Status and Fill Dropdowns -->
+    <script>
+      const leadStatusOptions = [
+        "Ongoing",
+        "Contacted",
+        "Closed-Won",
+        "Closed-Lost",
+      ];
+
+      // Function to randomize lead statuses
+      function getRandomLeadStatus() {
+        return leadStatusOptions[
+          Math.floor(Math.random() * leadStatusOptions.length)
+        ];
+      }
+
+      // Fill the dropdowns with random statuses
+      for (let i = 1; i <= 8; i++) {
+        const leadStatusSelect = document.getElementById(`leadStatus${i}`);
+        for (let j = 0; j < leadStatusOptions.length; j++) {
+          const option = document.createElement("option");
+          option.text = leadStatusOptions[j];
+          leadStatusSelect.add(option);
+        }
+        leadStatusSelect.value = getRandomLeadStatus();
+      }
+    </script>
+
+    <!-- Bottom Bar (Fixed) -->
+    <footer class="navbar navbar-light bg-light fixed-bottom">
+      <div class="container text-center">&copy; Your Company 2023</div>
+    </footer>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

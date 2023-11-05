@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Company Owner Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Correct version of Chart.js library -->
+    <style>
+      /* Custom CSS */
+      body {
+        background-color: #f4f4f4;
+      }
+      .navbar {
+        background-color: #007bff; /* Primary color for the navbar */
+      }
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+      }
+      .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      /* Primary color for buttons */
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+      }
+      /* Light color for buttons */
+      .btn-light {
+        background-color: #f8f9fa;
+      }
+      /* Custom button colors */
+      .btn-edit {
+        background-color: #28a745; /* Green color for Edit button */
+        color: #ffffff; /* White text color */
+      }
+      .btn-add-user {
+        background-color: #ffc107; /* Yellow color for Add User button */
+        color: #000000; /* Black text color */
+      }
+      /* Primary color for form elements */
+      .form-control {
+        border: 2px solid #007bff;
+      }
+      .card:nth-child(odd) {
+        background-color: #f4a261; /* Light orange background for odd cards */
+      }
+      .card:nth-child(even) {
+        background-color: #70c1b3; /* Light green background for even cards */
+      }
+      .card {
+        border: 1px solid #e76f51; /* Darker orange border */
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      .card-title {
+        color: #ffffff; /* White title text */
+      }
+      .card-text {
+        color: #264653; /* Dark blue content text */
+      }
+      footer {
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Company Name</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="user-management-link"
+                >User Management</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" class="container" id="dashboard">
+      <h1>Welcome to your Company Owner Dashboard</h1>
+      <!-- Your content goes here -->
+      <div class="row">
+        <div class="col-md-4">
+          <!-- Sales performance widget with Red background -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sales Performance</h5>
+              <p class="card-text">Total revenue: $125,000</p>
+            </div>
+            <div class="card-chart">
+              <canvas id="salesPieChart" width="200" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Marketing campaign statistics with Blue background -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Campaigns</h5>
+              <p class="card-text">Email opens: 25%</p>
+            </div>
+            <div class="card-chart">
+              <canvas
+                id="marketingCampaignChart"
+                width="200"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-green">
+            <div class="card-body">
+              <h5 class="card-title">Financial Summary</h5>
+              <p class="card-text">Profit: $45,000</p>
+            </div>
+            <div class="card-chart">
+              <canvas
+                id="financialSummaryChart"
+                width="200"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Additional features and components -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-yellow">
+            <div class="card-body">
+              <h5 class="card-title">Customer Insights</h5>
+              <p class="card-text">Customer Satisfaction: 85%</p>
+            </div>
+            <div class="card-chart">
+              <canvas
+                id="customerInsightsChart"
+                width="200"
+                height="200"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-red">
+            <div class="card-body">
+              <h5 class="card-title">Inventory Management</h5>
+              <p class="card-text">Total Products: 500</p>
+            </div>
+            <div class="card-chart">
+              <canvas id="inventoryPieChart" width="200" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-green">
+            <div class="card-body">
+              <h5 class="card-title">Financial Data</h5>
+              <p class="card-text">Total Revenue: $250,000</p>
+            </div>
+            <div class="card-chart">
+              <canvas id="financialChart" width="200" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more components and features as needed -->
+    </main>
+
+    <main
+      role="main"
+      class="container"
+      id="user-management"
+      style="display: none"
+    >
+      <h1>User Management</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Sales Users</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+                <td>
+                  <button class="btn btn-edit btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- Include additional rows for Sales users -->
+              <!-- Example: -->
+              <tr>
+                <td>Jane Smith</td>
+                <td>janesmith@example.com</td>
+                <td>
+                  <button class="btn btn-edit btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <h2>Marketing Users</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lisa Davis</td>
+                <td>lisadavis@example.com</td>
+                <td>
+                  <button class="btn btn-edit btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- Include additional rows for Marketing users -->
+              <!-- Example: -->
+              <tr>
+                <td>Sam Green</td>
+                <td>samgreen@example.com</td>
+                <td>
+                  <button class="btn btn-edit btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Add New User</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+          />
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select class="form-control" id="role" name="role">
+            <option value="sales">Sales</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-add-user btn-block">
+          Add User
+        </button>
+      </form>
+    </main>
+
+    <footer class="text-center py-3">&copy; 2023 Company Name</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Dummy data for the pie chart (replace with your actual data)
+      var pieChartData = {
+        labels: ["Product A", "Product B", "Product C"],
+        datasets: [
+          {
+            data: [30, 45, 25],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.7)",
+              "rgba(54, 162, 235, 0.7)",
+              "rgba(255, 206, 86, 0.7)",
+            ],
+          },
+        ],
+      };
+
+      // Get the canvas element by ID
+      var pieChartCanvas = document.getElementById("salesPieChart");
+
+      if (pieChartCanvas) {
+        var ctx = pieChartCanvas.getContext("2d");
+        new Chart(ctx, {
+          type: "pie",
+          data: pieChartData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Dummy data for the marketing campaign chart
+      var campaignData = {
+        labels: [
+          "Campaign 1",
+          "Campaign 2",
+          "Campaign 3",
+          "Campaign 4",
+          "Campaign 5",
+        ],
+        datasets: [
+          {
+            label: "Email Opens",
+            data: [25, 30, 20, 40, 35], // Replace with your actual campaign data
+            backgroundColor: "rgba(54, 162, 235, 0.7)",
+          },
+        ],
+      };
+
+      var campaignChartElement = document.getElementById(
+        "marketingCampaignChart"
+      );
+
+      if (campaignChartElement) {
+        var campaignChart = new Chart(campaignChartElement, {
+          type: "bar", // You can choose the chart type that suits your data
+          data: campaignData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Dummy data for the financial summary chart
+      var financialData = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+        datasets: [
+          {
+            label: "Profit",
+            data: [3500, 4000, 4200, 3800, 5000], // Replace with your actual financial data
+            backgroundColor: "rgba(98, 203, 61, 0.7)", // Green color
+          },
+        ],
+      };
+
+      var financialChartElement = document.getElementById(
+        "financialSummaryChart"
+      );
+
+      if (financialChartElement) {
+        var financialChart = new Chart(financialChartElement, {
+          type: "bar", // Bar chart for financial data
+          data: financialData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Dummy data for the customer insights chart
+      var insightsData = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+        datasets: [
+          {
+            label: "Customer Satisfaction",
+            data: [80, 85, 88, 82, 90], // Replace with your actual customer satisfaction data
+            fill: false,
+            borderColor: "rgba(255, 193, 7, 0.7)", // Orange color
+          },
+        ],
+      };
+
+      var insightsChartElement = document.getElementById(
+        "customerInsightsChart"
+      );
+
+      if (insightsChartElement) {
+        var insightsChart = new Chart(insightsChartElement, {
+          type: "line", // Line chart for customer insights
+          data: insightsData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Dummy data for the inventory pie chart
+      var inventoryPieData = {
+        labels: ["Category A", "Category B", "Category C"],
+        datasets: [
+          {
+            data: [180, 80, 260], // Replace with your actual inventory data
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.7)",
+              "rgba(54, 162, 235, 0.7)",
+              "rgba(255, 206, 86, 0.7)",
+            ],
+          },
+        ],
+      };
+
+      var inventoryPieChartElement =
+        document.getElementById("inventoryPieChart");
+
+      if (inventoryPieChartElement) {
+        var inventoryPieChart = new Chart(inventoryPieChartElement, {
+          type: "pie", // Pie chart for inventory data
+          data: inventoryPieData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Dummy data for the financial data chart
+      var financialData = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+        datasets: [
+          {
+            label: "Total Revenue",
+            data: [25000, 28000, 30000, 27000, 32000], // Replace with your actual financial data
+            fill: false,
+            borderColor: "rgba(98, 203, 61, 0.7)", // Green color
+          },
+        ],
+      };
+
+      var financialChartElement = document.getElementById("financialChart");
+
+      if (financialChartElement) {
+        var financialChart = new Chart(financialChartElement, {
+          type: "line", // Line chart for financial data
+          data: financialData,
+          options: {
+            responsive: false, // Make the chart non-responsive
+          },
+        });
+      }
+      // Toggle visibility of user management section
+      document
+        .querySelector("#user-management-link")
+        .addEventListener("click", function () {
+          document.querySelector("#user-management").style.display = "block";
+          document.querySelector("#dashboard").style.display = "none";
+        });
+
+      document
+        .querySelector("#dashboard-link")
+        .addEventListener("click", function () {
+          document.querySelector("#user-management").style.display = "none";
+          document.querySelector("#dashboard").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

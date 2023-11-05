@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subscription Plans</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .card {
+        margin: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: transform 0.2s;
+        height: 100%; /* Set a fixed card height */
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-title {
+        font-size: 24px;
+        color: #007bff; /* Title color */
+      }
+
+      .card-text {
+        font-size: 18px;
+      }
+
+      .card-price {
+        font-size: 24px;
+        color: #28a745; /* Price color */
+      }
+
+      .btn-select-plan {
+        background-color: #ffc107; /* Button color */
+        color: #000; /* Button text color */
+      }
+
+      /* Slightly bolder colored cards */
+      .basic-card {
+        background-color: #f5f5f5; /* Slightly bolder gray */
+      }
+
+      .premium-card {
+        background-color: #ffe0b3; /* Slightly bolder orange */
+      }
+
+      .ultimate-card {
+        background-color: #c2f0c2; /* Slightly bolder green */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar with company name and username -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Company Name</a>
+      <span class="navbar-text ml-auto">
+        <span class="mr-2">Welcome, User Name</span>
+        <a href="#" class="btn">Log Out</a>
+      </span>
+    </nav>
+
+    <div class="container">
+      <h1 class="text-center mt-4">Choose a Subscription Plan</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card basic-card">
+            <div class="card-body">
+              <h5 class="card-title">Basic Plan</h5>
+              <p class="card-text">Get access to essential features.</p>
+              <p class="card-price">$9.99/month</p>
+              <a href="#" class="btn btn-select-plan btn-block">Select Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card premium-card">
+            <div class="card-body">
+              <h5 class="card-title">Premium Plan</h5>
+              <p class="card-text">Unlock premium features and benefits.</p>
+              <p class="card-price">$19.99/month</p>
+              <a href="#" class="btn btn-select-plan btn-block">Select Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card ultimate-card">
+            <div class="card-body">
+              <h5 class="card-title">Ultimate Plan</h5>
+              <p class="card-text">
+                Access all features with ultimate support.
+              </p>
+              <p class="card-price">$29.99/month</p>
+              <a href="#" class="btn btn-select-plan btn-block">Select Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

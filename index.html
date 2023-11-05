@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Add Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Your Company Name</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              User Name
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-4">
+      <h1>Welcome, User Name</h1>
+
+      <!-- Buttons for Marketing Team -->
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-block">
+            <a
+              href="emailCampaign.html"
+              style="color: white; text-decoration: none"
+            >
+              Create Email Campaign
+            </a>
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-success btn-block">
+            <a href="report.html" style="color: white; text-decoration: none"
+              >View Reports</a
+            >
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-warning btn-block">
+            <a href="contact.html" style="color: white; text-decoration: none"
+              >Manage Contacts</a
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Email Campaign List -->
+      <h2>Email Campaigns</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Campaign Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Campaign 1</td>
+            <td>Active</td>
+            <td>
+              <button class="btn btn-info">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Campaign 2</td>
+            <td>Inactive</td>
+            <td>
+              <button class="btn btn-info">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+
+      <!-- Add New Contact Button -->
+      <button class="btn btn-success">
+        <a href="addContact.html" style="color: white; text-decoration: none">
+          <i class="fas fa-plus"></i> Add New Contact
+        </a>
+      </button>
+    </div>
+
+    <!-- Bottom Bar (Fixed) -->
+    <footer class="navbar navbar-light bg-light fixed-bottom">
+      <div class="container text-center">&copy; Your Company 2023</div>
+    </footer>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
